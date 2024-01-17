@@ -8,7 +8,7 @@ pipeline {
                 script {
                     def mvnHome = tool name: 'maven_3_9_6', type: 'maven'
                     withEnv(["PATH+MAVEN=${mvnHome}/bin"]) {
-                        bat "${mvnHome}\\bin\\mvn clean compile"
+                        sh "${mvnHome}\\bin\\mvn clean compile"
                     }
                 }
 
@@ -20,7 +20,7 @@ pipeline {
                 script {
                     def mvnHome = tool name: 'maven_3_9_6', type: 'maven'
                     withEnv(["PATH+MAVEN=${mvnHome}/bin"]) {
-                        bat "${mvnHome}\\bin\\mvn test -Dtest=GetRunner"
+                        sh "${mvnHome}\\bin\\mvn test -Dtest=GetRunner"
                     }
                 }
             }
